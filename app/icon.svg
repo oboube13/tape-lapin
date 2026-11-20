@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8ed7fb" />
+      <stop offset="100%" stop-color="#d6f2ff" />
+    </linearGradient>
+    <radialGradient id="fur" cx="42%" cy="30%" r="78%">
+      <stop offset="0%" stop-color="#fffdf8" />
+      <stop offset="62%" stop-color="#f8ead9" />
+      <stop offset="100%" stop-color="#efd8c1" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#sky)" />
+  <circle cx="404" cy="108" r="46" fill="#ffe17d" />
+  <path d="M0 372c90-44 180-40 268-8 88 32 172 16 244 4v144H0z" fill="#8fd35e" />
+  <ellipse cx="256" cy="452" rx="150" ry="46" fill="#4d2f1b" />
+  <g transform="translate(256 268)">
+    <g fill="url(#fur)" stroke="#d8ab88" stroke-width="7" stroke-linejoin="round">
+      <path d="M-40-70C-70-96-92-150-88-190c4-34 32-46 52-24 20 22 28 74 34 122z" transform="rotate(-6)" />
+      <path d="M40-70C70-96 92-150 88-190c-4-34-32-46-52-24-20 22-28 74-34 122z" transform="rotate(6)" />
+      <ellipse cx="0" cy="0" rx="112" ry="100" />
+      <path d="M-96 92c0-64 44-98 96-98s96 34 96 98z" />
+    </g>
+    <path d="M-44-76C-62-96-74-142-70-172c3-24 20-32 32-16 13 18 18 62 22 96z" fill="#ffc3d3" />
+    <path d="M44-76C62-96 74-142 70-172c-3-24-20-32-32-16-13 18-18 62-22 96z" fill="#ffc3d3" />
+    <ellipse cx="0" cy="24" rx="56" ry="40" fill="#fffdf8" />
+    <ellipse cx="-40" cy="-8" rx="20" ry="25" fill="#4a3227" />
+    <ellipse cx="40" cy="-8" rx="20" ry="25" fill="#4a3227" />
+    <circle cx="-32" cy="-18" r="8" fill="#fff" />
+    <circle cx="48" cy="-18" r="8" fill="#fff" />
+    <ellipse cx="-72" cy="34" rx="18" ry="11" fill="#ffb4c5" />
+    <ellipse cx="72" cy="34" rx="18" ry="11" fill="#ffb4c5" />
+    <path d="M-15 18q15-11 30 0 0 13-15 17-15-4-15-17z" fill="#ff97ae" />
+    <path d="M-22 44q22 20 44 0" fill="none" stroke="#b07d63" stroke-width="7" stroke-linecap="round" />
+  </g>
+</svg>

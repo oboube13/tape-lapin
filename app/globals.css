@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-baloo), ui-rounded, "Trebuchet MS", system-ui,
+    sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: #aee4ff;
+  color: #3f5a2c;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The game never scrolls and never shows a selection or callout. */
+.game-shell {
+  height: 100vh;
+  height: 100svh;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.game-header {
+  padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
+}
+
+.game-board-area {
+  padding-top: 0.5rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(0.75rem + env(safe-area-inset-left, 0px));
+  padding-right: calc(0.75rem + env(safe-area-inset-right, 0px));
+}
+
+/* Square board that always fits the visible viewport height. */
+.game-board-frame {
+  width: min(94vw, calc(100svh - 8.5rem), 620px);
+}
+
+/* Short screens (phones in landscape): trade the title for board space. */
+@media (max-height: 540px) {
+  .game-board-frame {
+    width: min(84vw, calc(100svh - 5.5rem), 480px);
+  }
+
+  .title-pill {
+    display: none;
+  }
+
+  .game-header {
+    padding-top: calc(0.4rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+@keyframes rabbit-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.12);
+  }
+}
+
+.rabbit-eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rabbit-blink 5.6s ease-in-out infinite;
+}
+
+@keyframes rabbit-ear-left {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(-3deg);
+  }
+  68% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes rabbit-ear-right {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  42% {
+    transform: rotate(3deg);
+  }
+  72% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+.rabbit-ear-left {
+  animation: rabbit-ear-left 4.4s ease-in-out infinite;
+}
+
+.rabbit-ear-right {
+  animation: rabbit-ear-right 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rabbit-eyes,
+  .rabbit-ear-left,
+  .rabbit-ear-right {
+    animation: none;
+  }
 }
